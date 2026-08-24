@@ -14,7 +14,7 @@ html {
 }
 
 body {
-    background: #0d2744;
+    background: #0D151C;
     color: #fff;
 }
 
@@ -127,8 +127,8 @@ header > .interface {
     justify-content: center;
 
     /* IMAGEM DE FUNDO */
-    background-image: url("");
-    background-size: 50%;
+    background-image: url("./imagens/minhafoto.png");
+    background-size: 70%;
     background-position: center;
     background-repeat: no-repeat;
 
@@ -183,7 +183,7 @@ header > .interface {
     font-size: 17px;
     font-weight: 400;
 
-    color: #008cff;
+    color: #e28940;
 
     margin-bottom: 10px;
 }
@@ -203,7 +203,7 @@ header > .interface {
     font-size: 28px;
     font-weight: 500;
 
-    color: #008cff;
+    color: #e28940;
 
     margin-bottom: 25px;
 }
@@ -289,7 +289,7 @@ header > .interface {
 .linha {
     width: 50px;
     height: 3px;
-    background: #008cff;
+    background: #e28940;
     margin-bottom: 25px;
 }
 
@@ -331,7 +331,7 @@ header > .interface {
 }
 
 .contato-item a:hover {
-    color: #008cff;
+    color:#e28940;
 }
 
 
@@ -415,7 +415,7 @@ header > .interface {
     width: 35px;
     height: 3px;
 
-    background: #008cff;
+    background: #e28940;
 
     border-radius: 5px;
 }
@@ -511,7 +511,7 @@ header > .interface {
 
     left: 0;
 
-    color: #008cff;
+    color: #e28940;
 
     font-size: 20px;
 }
@@ -566,7 +566,7 @@ header > .interface {
     width: 40px;
     height: 3px;
 
-    background: #008cff;
+    background: #e28940;
 
     border-radius: 5px;
 
@@ -798,7 +798,7 @@ header > .interface {
 
 .link-projeto:hover {
 
-    color: #45b2ff;
+    color: #e28940;
 }
 
 
@@ -948,7 +948,7 @@ header > .interface {
     width: 35px;
     height: 3px;
 
-    background: #008cff;
+    background: #e28940;
 
     border-radius: 5px;
 }
@@ -1010,7 +1010,7 @@ header > .interface {
     width: var(--nivel);
     height: 100%;
 
-    background: #008cff;
+    background: #e28940;
 
     border-radius: 10px;
 
