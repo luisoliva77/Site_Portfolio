@@ -126,30 +126,55 @@ header > .interface {
     align-items: center;
     justify-content: center;
 
-    /* IMAGEM DE FUNDO */
+    /* Cor das laterais igual ao fundo da imagem */
+    background-color: #020b13;
+
     background-image: url("./imagens/minhafoto.png");
-    background-size: 60%;
+    background-size: auto 100%;
     background-position: center;
     background-repeat: no-repeat;
 
     overflow: hidden;
 }
 
+/* Suaviza a transição entre a imagem e as laterais */
 
-/* CAMADA ESCURA */
+.topo::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        #020b13 0%,
+        #020b13 15%,
+        rgba(2, 11, 19, 0.95) 20%,
+        rgba(2, 11, 19, 0.55) 27%,
+        transparent 38%,
+        transparent 62%,
+        rgba(2, 11, 19, 0.55) 73%,
+        rgba(2, 11, 19, 0.95) 80%,
+        #020b13 85%,
+        #020b13 100%
+    );
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Escurecimento geral da imagem */
 
 .overlay {
     position: absolute;
-
     inset: 0;
 
-    background: rgba(0, 0, 0, 0.65);
+    background: rgba(0, 0, 0, 0.28);
 
     z-index: 1;
 }
 
-
-/* CONTEÚDO PRINCIPAL */
+/* Mantém os textos acima das camadas */
 
 .topo-conteudo {
     position: relative;
@@ -858,20 +883,6 @@ header > .interface {
 
 }
 
-/* =========================
-   TECNOLOGIAS
-========================= */
-
-.tecnologias {
-    width: 100%;
-    max-width: 1000px;
-
-    margin: 100px auto 0;
-
-    padding: 0 30px;
-}
-
-
 /* TÍTULO */
 
 .titulo-tecnologias {
@@ -1015,4 +1026,717 @@ header > .interface {
     border-radius: 10px;
 
     transition: width 0.6s ease;
+}
+
+/* =========================
+   NOVO TEMA ESCURO
+========================= */
+
+:root {
+    --fundo-principal: #05070d;
+    --fundo-secundario: #080c16;
+    --fundo-card: #0d1120;
+    --fundo-card-hover: #12172a;
+    --borda: #252c46;
+    --texto-principal: #f5f7ff;
+    --texto-secundario: #9ba5bd;
+    --destaque: #9b6cff;
+    --destaque-claro: #c6a8ff;
+    --laranja: #e28940;
+}
+
+body {
+    background: var(--fundo-principal);
+    color: var(--texto-principal);
+}
+
+/* CABEÇALHO */
+
+header {
+    background: linear-gradient(
+        180deg,
+        rgba(5, 7, 13, 0.96),
+        rgba(5, 7, 13, 0.70),
+        transparent
+    );
+}
+
+.logo a,
+.menu-desktop ul li a {
+    color: var(--texto-principal);
+}
+
+.menu-desktop ul li a:hover {
+    color: var(--destaque-claro);
+}
+
+.menu-desktop ul li a.ativo::after {
+    background: var(--destaque);
+}
+
+/* SEÇÃO INICIAL */
+
+.topo {
+    background-color: var(--fundo-principal);
+}
+
+.overlay {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5, 7, 13, 0.45),
+            rgba(5, 7, 13, 0.90)
+        );
+}
+
+.texto-inicio .apresentacao,
+.texto-inicio h2 {
+    color: var(--destaque-claro);
+}
+
+.descricao-inicio {
+    color: var(--texto-secundario);
+}
+
+/* SOBRE MIM E CURRÍCULO */
+
+.sobre {
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(113, 72, 190, 0.10),
+            transparent 38%
+        ),
+        var(--fundo-principal);
+
+    color: var(--texto-principal);
+}
+
+.sobre-conteudo h2,
+.contatos-conteudo h2,
+.titulo-curriculo h2,
+.item-curriculo h3,
+.formacao-item h4 {
+    color: var(--texto-principal);
+}
+
+.sobre-conteudo p,
+.item-curriculo > p,
+.formacao-item p,
+.cursos ul li {
+    color: var(--texto-secundario);
+}
+
+.contatos-conteudo {
+    border-left-color: var(--borda);
+}
+
+.contato-item strong {
+    color: var(--texto-principal);
+}
+
+.contato-item span,
+.contato-item a {
+    color: var(--texto-secundario);
+}
+
+.contato-item a:hover {
+    color: var(--destaque-claro);
+}
+
+.linha,
+.item-curriculo h3::after {
+    background: linear-gradient(
+        90deg,
+        var(--destaque),
+        var(--destaque-claro)
+    );
+}
+
+.cursos ul li::before {
+    color: var(--destaque);
+}
+
+/* =========================
+   NOVA FAIXA DE TECNOLOGIAS
+========================= */
+
+.tecnologias {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 110px auto 0;
+    padding: 70px 0 20px;
+
+    border-top: 1px solid var(--borda);
+}
+
+.titulo-tecnologias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0 20px;
+    margin-bottom: 45px;
+
+    text-align: center;
+}
+
+.subtitulo-secao {
+    margin-bottom: 8px;
+
+    color: var(--destaque-claro);
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.titulo-tecnologias h2 {
+    margin-bottom: 12px;
+
+    color: var(--texto-principal);
+
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.titulo-tecnologias p {
+    max-width: 650px;
+    margin-top: 8px;
+
+    color: var(--texto-secundario);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* ÁREA DA FAIXA */
+
+.faixa-tecnologias {
+    width: 100%;
+    overflow: hidden;
+
+    padding: 28px 0;
+
+    background: rgba(10, 14, 26, 0.82);
+
+    border-top: 1px solid var(--borda);
+    border-bottom: 1px solid var(--borda);
+
+    position: relative;
+}
+
+/* SOMBRA NAS LATERAIS */
+
+.faixa-tecnologias::before,
+.faixa-tecnologias::after {
+    content: "";
+
+    width: 130px;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.faixa-tecnologias::before {
+    left: 0;
+
+    background: linear-gradient(
+        90deg,
+        var(--fundo-principal),
+        transparent
+    );
+}
+
+.faixa-tecnologias::after {
+    right: 0;
+
+    background: linear-gradient(
+        -90deg,
+        var(--fundo-principal),
+        transparent
+    );
+}
+
+/* CONTEÚDO EM MOVIMENTO */
+
+.faixa-conteudo {
+    width: max-content;
+
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    padding: 0 11px;
+
+    animation: moverTecnologias 28s linear infinite;
+}
+
+.faixa-tecnologias:hover .faixa-conteudo {
+    animation-play-state: paused;
+}
+
+/* CARD DE CADA TECNOLOGIA */
+
+.tecnologia-card {
+    min-width: 150px;
+    height: 105px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(22, 27, 48, 0.95),
+        rgba(11, 15, 28, 0.95)
+    );
+
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.tecnologia-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--destaque);
+
+    background: linear-gradient(
+        145deg,
+        rgba(49, 37, 78, 0.95),
+        rgba(15, 19, 35, 0.95)
+    );
+}
+
+.tecnologia-card img {
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+}
+
+.tecnologia-card span {
+    color: var(--texto-principal);
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+@keyframes moverTecnologias {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% - 11px));
+    }
+}
+
+/* =========================
+   PORTFÓLIO ESCURO
+========================= */
+
+.portfolio-projetos {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(119, 75, 190, 0.12),
+            transparent 35%
+        ),
+        var(--fundo-secundario);
+
+    color: var(--texto-principal);
+}
+
+.portfolio-projetos .titulo-secao h2 {
+    color: var(--texto-principal);
+}
+
+.portfolio-projetos .titulo-secao p {
+    color: var(--texto-secundario);
+}
+
+.portfolio-projetos .linha {
+    background: linear-gradient(
+        90deg,
+        var(--destaque),
+        var(--destaque-claro)
+    );
+}
+
+/* CARDS DOS PROJETOS */
+
+.card-projeto {
+    background: linear-gradient(
+        160deg,
+        #151126 0%,
+        #0b0f1b 65%
+    );
+
+    border: 1px solid #302a49;
+    border-radius: 12px;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.card-projeto:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--destaque);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(155, 108, 255, 0.12);
+}
+
+.imagem-projeto {
+    background: #101426;
+}
+
+.imagem-projeto::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        180deg,
+        transparent 50%,
+        rgba(7, 8, 16, 0.55)
+    );
+
+    pointer-events: none;
+}
+
+.numero-projeto {
+    color: #ffffff;
+
+    background: rgba(22, 14, 39, 0.80);
+
+    border: 1px solid rgba(198, 168, 255, 0.35);
+
+    z-index: 2;
+}
+
+.conteudo-projeto {
+    height: 145px;
+    padding: 18px;
+}
+
+.conteudo-projeto h3 {
+    color: var(--texto-principal);
+
+    font-size: 14px;
+}
+
+.conteudo-projeto p {
+    color: var(--texto-secundario);
+}
+
+.link-projeto {
+    color: var(--destaque-claro);
+}
+
+.link-projeto:hover {
+    color: #ffffff;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+    .sobre-container,
+    .curriculo-conteudo {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .contatos-conteudo {
+        padding-left: 0;
+
+        border-left: none;
+        border-top: 1px solid var(--borda);
+
+        padding-top: 40px;
+    }
+
+    .cursos {
+        padding-left: 0;
+    }
+
+    .faixa-tecnologias::before,
+    .faixa-tecnologias::after {
+        width: 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .titulo-tecnologias h2 {
+        font-size: 27px;
+    }
+
+    .tecnologia-card {
+        min-width: 125px;
+        height: 95px;
+    }
+
+    .tecnologia-card img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .faixa-conteudo {
+        animation-duration: 22s;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .faixa-conteudo {
+        animation: none;
+    }
+}
+
+/* =========================
+   COR PRINCIPAL DO SITE
+========================= */
+
+:root {
+    --destaque: #e28940;
+    --destaque-claro: #f2ad74;
+}
+
+/* MENU */
+
+.menu-desktop ul li a:hover {
+    color: #e28940;
+}
+
+.menu-desktop ul li a.ativo::after {
+    background: #e28940;
+}
+
+/* TELA INICIAL */
+
+.texto-inicio .apresentacao,
+.texto-inicio h2 {
+    color: #e28940;
+}
+
+/* LINHAS DOS TÍTULOS */
+
+.linha,
+.item-curriculo h3::after,
+.portfolio-projetos .linha {
+    background: linear-gradient(
+        90deg,
+        #e28940,
+        #f2ad74
+    );
+}
+
+/* LINKS */
+
+.contato-item a:hover,
+.link-projeto {
+    color: #e28940;
+}
+
+.link-projeto:hover {
+    color: #f2ad74;
+}
+
+/* CURSOS */
+
+.cursos ul li::before {
+    color: #e28940;
+}
+
+/* TECNOLOGIAS */
+
+.subtitulo-secao {
+    color: #e28940;
+}
+
+.tecnologia-card:hover {
+    border-color: #e28940;
+
+    background: linear-gradient(
+        145deg,
+        rgba(66, 39, 20, 0.95),
+        rgba(15, 19, 35, 0.95)
+    );
+
+    box-shadow:
+        0 12px 30px rgba(226, 137, 64, 0.15);
+}
+
+/* FUNDO SUAVE DA SEÇÃO SOBRE */
+
+.sobre {
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(226, 137, 64, 0.08),
+            transparent 38%
+        ),
+        #05070d;
+}
+
+/* FUNDO SUAVE DA SEÇÃO DE PROJETOS */
+
+.portfolio-projetos {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(226, 137, 64, 0.10),
+            transparent 35%
+        ),
+        #080c16;
+}
+
+/* CARDS DOS PROJETOS */
+
+.card-projeto {
+    background: linear-gradient(
+        160deg,
+        #191109 0%,
+        #0b0f1b 65%
+    );
+
+    border-color: rgba(226, 137, 64, 0.25);
+}
+
+.card-projeto:hover {
+    border-color: #e28940;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(226, 137, 64, 0.18);
+}
+
+/* NÚMERO DOS PROJETOS */
+
+.numero-projeto {
+    background: rgba(46, 27, 13, 0.85);
+
+    border-color: rgba(226, 137, 64, 0.45);
+}
+
+/* BARRAS ANTIGAS, CASO AINDA EXISTAM */
+
+.progresso-tecnologia {
+    background: #e28940;
+}
+
+/* SELEÇÃO DE TEXTO */
+
+::selection {
+    color: #ffffff;
+    background: #e28940;
+}
+
+
+/* MESMO FUNDO COM EFEITO LARANJA */
+
+.sobre,
+.tecnologias,
+.portfolio-projetos {
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(226, 137, 64, 0.08),
+            transparent 38%
+        ),
+        #080c16;
+}
+
+
+/* =========================
+   PROJETOS EM CARROSSEL HORIZONTAL
+========================= */
+
+.projetos-grid {
+    width: 100%;
+    max-width: 1200px;
+
+    margin-top: 60px;
+    padding: 5px 5px 25px;
+
+    display: flex;
+    gap: 28px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: thin;
+    scrollbar-color: #e28940 #111827;
+}
+
+/* TAMANHO DOS CARDS */
+
+.card-projeto {
+    flex: 0 0 310px;
+    width: 310px;
+
+    scroll-snap-align: start;
+}
+
+/* BARRA DE ROLAGEM — CHROME, EDGE E SAFARI */
+
+.projetos-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.projetos-grid::-webkit-scrollbar-track {
+    background: #111827;
+    border-radius: 10px;
+}
+
+.projetos-grid::-webkit-scrollbar-thumb {
+    background: #e28940;
+    border-radius: 10px;
+}
+
+.projetos-grid::-webkit-scrollbar-thumb:hover {
+    background: #f2ad74;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px) {
+    .projetos-grid {
+        gap: 18px;
+        padding-bottom: 20px;
+    }
+
+    .card-projeto {
+        flex: 0 0 85%;
+        width: 85%;
+    }
 }
