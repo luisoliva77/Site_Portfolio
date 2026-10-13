@@ -71,12 +71,10 @@
 
             <h1>Luís Felipe</h1>
 
-            <h2>Analista de Dados</h2>
-
-            <p class="descricao-inicio">
-                Transformando dados em informações para apoiar decisões
-                e gerar soluções.
-            </p>
+            <h2 class="titulo-digitando">
+                <span id="texto-digitando"></span>
+                <span class="cursor-digitando" aria-hidden="true">|</span>
+            </h2>
 
         </div>
 
@@ -916,6 +914,48 @@
 
 </main>
 
+<script>
+    const textoDigitando = document.getElementById("texto-digitando");
+    const fraseDigitando = "Analista de Dados";
+
+    let indiceLetra = 0;
+    let estaApagando = false;
+
+    function animarDigitacao() {
+        if (!estaApagando) {
+            indiceLetra++;
+
+            textoDigitando.textContent = fraseDigitando.substring(
+                0,
+                indiceLetra
+            );
+
+            if (indiceLetra === fraseDigitando.length) {
+                estaApagando = true;
+                setTimeout(animarDigitacao, 1600);
+                return;
+            }
+        } else {
+            indiceLetra--;
+
+            textoDigitando.textContent = fraseDigitando.substring(
+                0,
+                indiceLetra
+            );
+
+            if (indiceLetra === 0) {
+                estaApagando = false;
+                setTimeout(animarDigitacao, 500);
+                return;
+            }
+        }
+
+        const velocidade = estaApagando ? 100 : 180;
+        setTimeout(animarDigitacao, velocidade);
+    }
+
+    animarDigitacao();
+</script>
 
 </body>
 
