@@ -1740,3 +1740,283 @@ header {
         width: 85%;
     }
 }
+
+/* =========================
+   NOVA ESTRUTURA DO CURRÍCULO
+========================= */
+
+.curriculo {
+    width: 100%;
+    margin-top: 100px;
+}
+
+/* TÍTULO */
+
+.titulo-curriculo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 65px;
+
+    text-align: center;
+}
+
+.titulo-curriculo h2 {
+    margin-bottom: 10px;
+
+    color: #ffffff;
+
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.titulo-curriculo .linha {
+    width: 42px;
+    height: 3px;
+
+    margin-bottom: 18px;
+
+    background: #e28940;
+    border-radius: 5px;
+}
+
+.subtitulo-curriculo {
+    max-width: 620px;
+
+    color: #9ba5bd;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* DUAS COLUNAS */
+
+.curriculo-conteudo {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+
+    gap: 80px;
+
+    text-align: left;
+}
+
+.coluna-curriculo {
+    min-width: 0;
+}
+
+.coluna-esquerda {
+    display: flex;
+    flex-direction: column;
+
+    gap: 45px;
+}
+
+.coluna-experiencia {
+    padding-left: 15px;
+}
+
+/* TÍTULOS DAS ÁREAS */
+
+.item-curriculo h3 {
+    margin-bottom: 22px;
+    padding: 0;
+
+    color: #ffffff;
+
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.item-curriculo h3::after {
+    display: none;
+}
+
+/* LINHA VERTICAL */
+
+.timeline-curriculo {
+    position: relative;
+
+    margin-left: 5px;
+    padding-left: 25px;
+
+    border-left: 2px solid rgba(226, 137, 64, 0.75);
+}
+
+.timeline-item {
+    position: relative;
+
+    padding-bottom: 4px;
+}
+
+/* MARCADOR DA LINHA */
+
+.timeline-item::before {
+    content: "";
+
+    width: 10px;
+    height: 10px;
+
+    position: absolute;
+    top: 3px;
+    left: -31px;
+
+    background: #080c16;
+
+    border: 2px solid #e28940;
+    border-radius: 50%;
+
+    box-shadow: 0 0 12px rgba(226, 137, 64, 0.35);
+}
+
+/* TEXTOS */
+
+.timeline-item h4 {
+    margin-bottom: 8px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+
+    text-transform: uppercase;
+}
+
+.timeline-item p {
+    max-width: none;
+    margin: 0 0 10px;
+
+    color: #9ba5bd;
+
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+.periodo-curriculo {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #e28940;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.timeline-item .instituicao {
+    margin-bottom: 12px;
+
+    color: #f2ad74;
+
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* LISTAS */
+
+.timeline-item ul {
+    margin: 14px 0 18px;
+    padding-left: 18px;
+}
+
+.timeline-item ul li {
+    margin-bottom: 10px;
+    padding-left: 3px;
+
+    color: #9ba5bd;
+
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.timeline-item ul li::marker {
+    color: #e28940;
+}
+
+/* CURSOS */
+
+.cursos-curriculo {
+    padding-left: 0;
+}
+
+.cursos-curriculo ul {
+    display: block;
+
+    margin: 0;
+    padding-left: 18px;
+}
+
+.cursos-curriculo ul li {
+    margin-bottom: 10px;
+    padding-left: 3px;
+}
+
+.cursos-curriculo ul li::before {
+    display: none;
+}
+
+/* FERRAMENTAS DA EXPERIÊNCIA */
+
+.ferramentas-experiencia {
+    margin-top: 22px !important;
+    padding-top: 15px;
+
+    border-top: 1px solid rgba(226, 137, 64, 0.20);
+}
+
+.ferramentas-experiencia strong {
+    color: #ffffff;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+
+    .curriculo-conteudo {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .coluna-experiencia {
+        padding-left: 0;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .curriculo {
+        margin-top: 70px;
+    }
+
+    .titulo-curriculo {
+        margin-bottom: 45px;
+    }
+
+    .titulo-curriculo h2 {
+        font-size: 27px;
+    }
+
+    .coluna-esquerda {
+        gap: 38px;
+    }
+
+    .timeline-curriculo {
+        padding-left: 20px;
+    }
+
+    .timeline-item::before {
+        left: -26px;
+    }
+
+}
+
+.tecnologia-card img {
+    width: 42px;
+    height: 42px;
+    display: block;
+    object-fit: contain;
+}
